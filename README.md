@@ -3,7 +3,7 @@
 
 主要通过尺寸压缩和质量压缩，以达到清晰度最优，该项目参考了[https://github.com/zetbaitsu/Compressor](https://github.com/zetbaitsu/Compressor) 的部分代码，且在基础上修正了部分bug
 ## 效果图<br>
-![](https://github.com/Canglangweiwei/CompressHelper/blob/master/111.png)
+![](https://github.com/Canglangweiwei/CompressHelper/blob/CompressHelper-master/111.png)
 
 #### ⊙开源不易，希望给个star或者fork奖励
 #### ⊙拥抱开源：https://github.com/Canglangweiwei/
