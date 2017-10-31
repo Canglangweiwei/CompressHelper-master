@@ -8,7 +8,7 @@ package com.nanchen.compresshelper;
  * Email: liushilin520@foxmail.com
  * Date: 2017-02-19  9:52
  */
-
+@SuppressWarnings("ALL")
 public class StringUtil {
 
     private StringUtil() {

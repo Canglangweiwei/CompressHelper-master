@@ -16,13 +16,14 @@ import java.io.OutputStream;
 
 /**
  * 文件工具类
- *
+ * <p>
  * Author: nanchen
  * Email: liushilin520@foxmail.com
  * Date: 2017-03-08  9:03
  */
-
+@SuppressWarnings("ALL")
 public class FileUtil {
+
     static final String FILES_PATH = "CompressHelper";
     private static final int EOF = -1;
     private static final int DEFAULT_BUFFER_SIZE = 1024 * 4;
@@ -60,7 +61,6 @@ public class FileUtil {
     public static boolean isFileExists(File file) {
         return file != null && file.exists();
     }
-
 
     /**
      * 重命名文件
@@ -135,12 +135,12 @@ public class FileUtil {
         return isFileExists(file) && file.isFile();
     }
 
-
     /**
      * 重命名文件
-     * @param file      文件
-     * @param newName   新名字
-     * @return          新文件
+     *
+     * @param file    文件
+     * @param newName 新名字
+     * @return 新文件
      */
     public static File renameFile(File file, String newName) {
         File newFile = new File(file.getParent(), newName);
@@ -157,12 +157,12 @@ public class FileUtil {
         return newFile;
     }
 
-
     /**
      * 获取临时文件
-     * @param context   上下文
-     * @param uri       url
-     * @return          临时文件
+     *
+     * @param context 上下文
+     * @param uri     url
+     * @return 临时文件
      * @throws IOException
      */
     public static File getTempFile(Context context, Uri uri) throws IOException {
@@ -182,7 +182,6 @@ public class FileUtil {
             copy(inputStream, out);
             inputStream.close();
         }
-
         if (out != null) {
             out.close();
         }
@@ -191,7 +190,8 @@ public class FileUtil {
 
     /**
      * 截取文件名称
-     * @param fileName  文件名称
+     *
+     * @param fileName 文件名称
      */
     static String[] splitFileName(String fileName) {
         String name = fileName;
@@ -201,15 +201,15 @@ public class FileUtil {
             name = fileName.substring(0, i);
             extension = fileName.substring(i);
         }
-
         return new String[]{name, extension};
     }
 
     /**
      * 获取文件名称
-     * @param context   上下文
-     * @param uri       uri
-     * @return          文件名称
+     *
+     * @param context 上下文
+     * @param uri     uri
+     * @return 文件名称
      */
     static String getFileName(Context context, Uri uri) {
         String result = null;
@@ -239,9 +239,10 @@ public class FileUtil {
 
     /**
      * 获取真实的路径
-     * @param context   上下文
-     * @param uri       uri
-     * @return          文件路径
+     *
+     * @param context 上下文
+     * @param uri     uri
+     * @return 文件路径
      */
     static String getRealPathFromURI(Context context, Uri uri) {
         Cursor cursor = context.getContentResolver().query(uri, null, null, null, null);
@@ -255,8 +256,6 @@ public class FileUtil {
             return realPath;
         }
     }
-
-
 
     static int copy(InputStream input, OutputStream output) throws IOException {
         long count = copyLarge(input, output);

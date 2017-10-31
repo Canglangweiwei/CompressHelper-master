@@ -24,7 +24,7 @@ import java.io.InputStream;
  * Email: liushilin520@foxmail.com
  * Date: 2017-03-08  9:03
  */
-
+@SuppressWarnings("ALL")
 public class BitmapUtil {
 
     private BitmapUtil() {
@@ -162,7 +162,6 @@ public class BitmapUtil {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
         return scaledBitmap;
     }
 
@@ -186,7 +185,6 @@ public class BitmapUtil {
             } catch (IOException ignored) {
             }
         }
-
         return new File(filename);
     }
 
@@ -202,7 +200,6 @@ public class BitmapUtil {
         fileName = TextUtils.isEmpty(fileName) ? prefix + FileUtil.splitFileName(FileUtil.getFileName(context, uri))[0] : fileName;
         return file.getAbsolutePath() + File.separator + fileName + "." + extension;
     }
-
 
     /**
      * 计算inSampleSize
@@ -224,7 +221,6 @@ public class BitmapUtil {
         while (totalPixels / (inSampleSize * inSampleSize) > totalReqPixelsCap) {
             inSampleSize++;
         }
-
         return inSampleSize;
     }
 }
