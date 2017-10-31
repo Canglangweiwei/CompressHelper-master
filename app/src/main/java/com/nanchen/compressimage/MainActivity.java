@@ -28,7 +28,6 @@ public class MainActivity extends AppCompatActivity {
     private TextView mTextNew;
 
     private File oldFile;
-    private File newFile;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void compress(View view) {
         // 默认的压缩方法，多张图片只需要直接加入循环即可
-        newFile = CompressHelper.getDefault(getApplicationContext()).compressToFile(oldFile);
+        File newFile = CompressHelper.getDefault(getApplicationContext()).compressToFile(oldFile);
 
 
 //        String yourFileName = "123.jpg";
@@ -62,7 +61,6 @@ public class MainActivity extends AppCompatActivity {
 //                        Environment.DIRECTORY_PICTURES).getAbsolutePath())
 //                .build()
 //                .compressToFile(oldFile);
-
 
         mImageNew.setImageBitmap(BitmapFactory.decodeFile(newFile.getAbsolutePath()));
         mTextNew.setText(String.format("Size : %s", getReadableFileSize(newFile.length())));
